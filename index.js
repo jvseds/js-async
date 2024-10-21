@@ -1,5 +1,6 @@
 const container = document.getElementsByClassName("container")[0];
 const userDiv = document.getElementById("users");
+const postDiv = document.getElementsByClassName("posts")[0];
 
 const base_url = "https://jsonplaceholder.typicode.com/";
 
@@ -36,9 +37,11 @@ async function fetchPosts(userID) {
     postsData.forEach((post) => {
       if (post.userId === userID) {
         const userPost = document.createElement("div");
+        // add post class style
+        userPost.classList.add("post");
         userPost.textContent += `Post Title: ${post.title}`;
         userPost.textContent += `Post Content: ${post.body}`;
-        userDiv.appendChild(userPost);
+        postDiv.appendChild(userPost);
       }
     });
   } catch (error) {
