@@ -13,7 +13,10 @@ async function fetchUsers() {
 
     usersData.forEach((user) => {
       const userElement = document.createElement("div");
-      userElement.textContent = `${user.name}`;
+      userElement.textContent = `ID: ${user.id},
+      Name: ${user.name},
+      Username: ${user.username},
+      Email: ${user.email}`;
       userDiv.appendChild(userElement);
     });
   } catch (error) {
